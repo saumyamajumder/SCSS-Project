@@ -1,0 +1,59 @@
+/* HEADER */
+
+header {
+    padding: 15px 0;
+    z-index: 999;
+   @include transition(all, .3s, ease);
+
+    @include md-max {
+        padding: 10px 0;
+    }
+
+    .logo {
+        a {
+            background-image: none;
+        }
+    }
+
+    .right-header {
+        .cta {
+            @include md-max {
+                @include display(none);
+            }
+
+            .cta-number {
+
+                a {
+                    font-size: 35px;
+                    @include font-weight(bold);
+
+                    @include md-max {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .cta-text {
+                max-width: 270px;
+
+
+                p {
+                    color: $text-color;
+                    @include font-weight(300);
+                }
+
+            }
+        }
+    }
+
+    &.fixed-header {
+        @include display-position(fixed);
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $white;
+        box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+        @include transition(all, .3s, ease);
+        padding: 15px 0;
+    }
+}

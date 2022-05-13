@@ -1,0 +1,34 @@
+/* banner */
+
+.banner {
+    @include background-img(cover, no-repeat, Center);
+    @include display-position(relative);
+    padding: 150px 0;
+    z-index: 1;
+    @include md-max{
+        padding: 100px 0;
+    }
+    @include sm-max{
+        padding: 70px 0;
+    }
+
+    &::before {
+        @include display-position(absolute);
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    .banner-content {
+        max-width: 900px;
+        margin: 0 auto;
+        p{
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+    }
+}
