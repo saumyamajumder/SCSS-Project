@@ -1,0 +1,153 @@
+/* banner */
+.banner {
+    @include overflow(hidden);
+
+    .banner-slider {
+        @include flexbox;
+        background-color: $primary-color;
+        max-height: 700px;
+        @include display-position(relative);
+        @include overflow(hidden);
+        @include md-max{
+            max-height: 600px;
+        }
+
+        .quote-slider-wrapper {
+            max-width: 45%;
+            -ms-flex: 0 0 45%;
+            flex: 0 0 45%;
+            z-index: 2;
+            // @include overflow(hidden);
+            padding-top: 150px;
+
+            .home-banner-slider {
+                height: 100%;
+
+                .home-banner-content {
+                    @include flexbox;
+                    height: 100%;
+                    @include justify-content(flex-end);
+                    @include display-position(absolute);
+                    right: -115px;    
+                    @include md-max{
+                        right: -175px;  
+                    }
+                  
+
+                    .quote-text {
+                        max-width: 500px;
+                        @include align-items(center);
+                        font-size: 24px;
+                        @include transition(all, 0.3s, ease-in-out);
+                        padding-left: 15px;
+                        padding-right: 15px;
+
+                        .h1 {
+                            font-size: 115px;
+                            text-transform: uppercase;
+                            line-height: 110px;
+                            font-weight: 500;
+                            @include md-max{
+                                font-size: 85px;
+                                line-height: 80px;
+                            }
+                            @include sm-max{
+                                font-size: 65px;
+                                line-height: 60px;
+                            }
+                        }
+
+                        p {
+                            max-width: 350px;
+                            font-size: 16px;
+                        }
+
+                        .page-btn {
+                            @include page-btn($white, $text-color);
+
+                            &:hover {
+                                @include page-btn($text-color, $white);
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .image-slider-wrapper {
+            @include display-position(relative);
+            -ms-flex: 0 0 55%;
+            flex: 0 0 55%;
+            max-width: 55%;
+            background-color: #f1f1f1;
+
+
+            .image-slider {
+                height: 100%;
+                @include overflow(hidden);
+
+                .swiper-slide {
+                    // for custom transition
+                    position: relative;
+                    // overflow: hidden;
+
+                    .swiper-slide-inner {
+                        // for custom transition
+                        // position: absolute;
+                        // left: 0;
+                        // top: 0;
+                        // width: 100%;
+                        height: 100%;
+                        
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: 50% 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiper-slide.swiper-slide-next .quote-text,
+        .swiper-slide.swiper-slide-prev .quote-text {
+            opacity: 0;
+        }
+
+        .swiper-slide.swiper-slide-active .quote-text {
+            opacity: 1;
+        }
+
+        .swiper-button-prev {
+            @include display-position(absolute);
+            bottom: 0;
+            top: 90%;
+            left: 45%;
+            width: 50px;
+            height: 50px;
+            background-color: $primary-color;
+            color: $white;
+            &::after{
+                font-size: 20px;
+                color: $white;
+            }
+
+        }
+        .swiper-button-next{
+            @include display-position(absolute);
+            bottom: 0;
+            top: 82%;
+            left: 45%;
+            width: 50px;
+            height: 50px;
+            background-color: $primary-color;
+            color: $white;
+            &::after{
+                font-size: 20px;
+                color: $white;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+/* HEADER */
+
+header {
+    @include display-position(absolute);
+    top: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    .total-row {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        .logo{
+            max-width: 150px;
+            @include flexbox;
+        }
+    }
+
+}

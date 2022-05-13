@@ -1,0 +1,120 @@
+.header-menu {
+    .menu-icon {
+        @include display(block);
+        width: 30px;
+        height: 30px;
+        @include display-position(relative);
+        cursor: pointer;
+        z-index: 999;
+        right: 0px;
+        float: right;
+        margin-left: 20px;
+
+
+        span {
+            @include display-position(absolute);
+            top: 50%;
+            left: 0;
+            @include transform (translateY(-50%));
+            height: 3px;
+            width: 20px;
+            background: $white;
+            @include display(block);
+
+            &::before {
+                content: "";
+                @include display-position(absolute);
+                @include transition(transform, 0.3s, ease);
+                right: 0;
+                top: -9px;
+                width: 30px;
+                height: 100%;
+                background: $white;
+            }
+
+            &:after {
+                content: "";
+                @include display-position(absolute);
+                @include transition(transform, 0.3s, ease);
+                right: 0;
+                bottom: -9px;
+                width: 30px;
+                height: 100%;
+                background: $white;
+            }
+
+        }
+
+        &.open span {
+            background: transparent;
+
+            &::before {
+                top: 0;
+                width: 100%;
+                @include transform (rotate(135deg));
+                background: $white;
+            }
+
+            &:after {
+                bottom: 0;
+                width: 100%;
+                @include transform (rotate(225deg));
+                background: $white;
+            }
+        }
+    }
+}
+
+.menu {
+    @include display(none);
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: $primary-color;
+    z-index: 100;
+    @include display-position(fixed);
+    @include transition(all, 0.5s, ease);
+    @include overflow(hidden);
+    @include display(block);
+
+    &.open-menu {
+        @include transition(all, 0.5s, ease);
+        height: 100vh;
+        @include flexbox;
+        
+    }
+
+    .navbar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        @include flexbox;
+        @include flex-flow(column);
+        @include align-items(center);
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+        @include transition(all, 0.5s, ease);
+
+        .nav-item {
+
+            .nav-link {
+                font-size: 16px;
+                font-weight: 400;
+                color: $white;
+
+                &:hover {
+                    font-weight: 400;
+                    color: $gray-light;
+                }
+
+                &:active {
+                    color: $gray-light;
+                }
+
+            }
+
+        }
+    }
+}
