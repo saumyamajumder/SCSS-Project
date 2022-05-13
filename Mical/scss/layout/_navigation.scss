@@ -1,0 +1,185 @@
+/* MENU */
+.burger {
+    @include display-position(absolute);
+    @include display(none);
+    @include transform(rotate(0deg));
+    @include transition(all, 0.5s, ease-in-out);
+    cursor: pointer;
+    width: 2rem;
+    height: 1rem;
+    border: none;
+    outline: none;
+    opacity: 0;
+    visibility: hidden;
+    background: none;
+    top: 25px;
+    right: 30px;
+
+    .burger-line {
+        @include display(block);
+        @include display-position(absolute);
+        @include transition(all, 0.5s, ease-in-out);
+        @include border-radius(0.25rem);
+        width: 100%;
+        height: 2px;
+        left: 0;
+        border: none;
+        outline: none;
+        opacity: 1;
+        background: $white;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 0.5rem;
+        }
+
+        &:nth-child(4) {
+            top: 1rem;
+        }
+    }
+
+    &.is-active {
+        .burger-line {
+
+            &:nth-child(1),
+            &:nth-child(4) {
+                top: 1.25rem;
+                width: 0%;
+                left: 50%;
+            }
+
+            &:nth-child(2) {
+                @include transform(rotate(45deg));
+            }
+
+            &:nth-child(3) {
+                @include transform(rotate(-45deg));
+            }
+        }
+    }
+
+    @include md-max {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* disktop */
+.right-header-menu {
+    @include md-max {
+        width: 100%;
+        height: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: hidden;
+        overflow: hidden;
+        @include transition(all, 0.5s, ease-in-out);
+        @include display-position(absolute);
+        z-index: 999;
+        left: 0;
+        background-color: $dark-bule;
+        top: 86px;
+       
+        &.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem 0;
+        }
+    }
+    ul {
+        list-style: none;
+        @include flexbox;
+        @include md-max {
+            @include flex-flow(column);
+        }
+
+        li {
+            padding-left: 25px;
+            padding-right: 25px;
+            @include lg-max{
+                padding-left: 15px;
+            padding-right: 15px;
+            }
+
+            &:first-child {
+                padding-left: 0;
+                @include md-max {
+                    padding-left: 15px;
+                }
+            }
+
+            a {
+                color: $white;
+                font-family: 'Poppins', sans-serif;
+                @include font-weight(400);
+                text-transform: capitalize;
+                background-image: none;
+                font-size: 16px;
+                @include display-position(relative);
+                
+                &:hover {
+                    color: $green-color;
+                }
+
+                &.active {
+                    color: $green-color;
+                }
+            }
+        }
+    }
+    
+
+}
+
+.right-header-user-login {
+    @include md-max {
+        margin-right: 50px;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            color: $white;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 40px;
+            @include lg-max{
+                margin-left: 15px;
+            }
+
+            span {
+                margin-right: 10px;
+            }
+
+            a {
+                color: $white;
+                font-family: 'Poppins', sans-serif;
+                background-image: none;
+                font-size: 16px;
+
+                &:hover {
+                    color: $green-color;
+                }
+                @include rwd-max(575){
+                    .header-login{
+                        @include display(none);
+                    }
+                }
+            }
+           
+        }
+    }
+}

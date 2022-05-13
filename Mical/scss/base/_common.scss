@@ -1,0 +1,27 @@
+.section {
+    @include common-padding(70px, 80px);
+
+    @include md-max {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+}
+
+.divider {
+    @include divider;
+
+   
+}
+
+.heading {
+    .heading-text {
+        position: relative;
+        @include display-position(relative);
+        @include display(inline-block);
+
+        &::before {
+            @include divider;
+
+        }
+    }
+}

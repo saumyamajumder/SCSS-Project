@@ -1,0 +1,22 @@
+/* HEADER */
+header {
+    background-image: linear-gradient(0deg, #455fe2 58%, $sceondary-color 89%);
+    padding: 15px 0;
+    border-bottom: 15px solid $text-color;
+
+    .full-container {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+
+        .logo {
+            @include flexbox;
+            a {
+                background-image: none;
+                line-height: normal;
+                @include flexbox;
+            }
+        }
+    }
+
+}

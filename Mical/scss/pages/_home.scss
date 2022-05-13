@@ -1,0 +1,243 @@
+/* MODULE 1 */
+
+.module1 {
+    z-index: 2;
+    @include display-position(relative);
+
+    .container {
+        .row {
+            transform: translateY(-100px);
+            max-width: 850px;
+            margin: 0 auto;
+
+            .module-1-content-module {
+                padding: 25px 10px 15px;
+                background-color: $white;
+                box-shadow: 1px 0 29px rgb(0 0 0 / 10%);
+                @include sm-max{
+                    margin-top: 25px;
+                }
+                figure {
+                    max-width: 65px;
+                    margin: 0 auto;
+                }
+
+                p {
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ABOUT */
+
+.about-section {
+    margin-top: -25px;
+    @include overflow(hidden);
+    @include common-padding(0, 70px);
+
+    .container {
+        .about-module {
+            @include background-img(cover, no-repeat, center);
+            @include display-position(relative);
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 85px;
+            @include rwd-max (575){
+                padding: 10px;
+            }
+
+            &::before {
+                content: '';
+                @include display-position(absolute);
+                top: 55px;
+                width: 600px;
+                height: 70px;
+                background: $green-color;
+                left: -95px;
+                @include transform(rotate(-23deg));
+                @include border-radius(50px);
+                z-index: -1;
+            }
+
+            &::after {
+                content: '';
+                @include display-position(absolute);
+                bottom: 40px;
+                width: 600px;
+                height: 70px;
+                background: $primary-color;
+                right: -95px;
+                @include transform(rotate(-23deg));
+                @include border-radius(50px);
+                z-index: -1;
+            }
+
+            .about-content {
+                background-color: $white;
+                padding: 75px;
+                @include border-radius(50px);
+                @include sm-max{
+                    padding: 40px;
+                }
+                @include rwd-max(575) {
+                    padding: 25px;
+                }
+            }
+        }
+    }
+}
+
+
+/* What We Do */
+
+.what-we-do-section {
+
+    .what-we-do-module-full {
+        max-width: 750px;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        .what-we-do-module {
+            @include border-radius(50px);
+            @include overflow(hidden);
+            @include display-position(relative);
+            z-index: 1;
+            @include transition(all, 0.4s, ease-in-out);
+            @include rwd-max(575){
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            &::before {
+                @include display-position(absolute);
+                content: '';
+                background-color: $heading-color;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                @include transition(all, 0.4s, ease-in-out);
+                z-index: 1;
+            }
+
+            figure {
+                line-height: 0;
+
+                img {
+                    @include transition(all, 0.4s, ease-in-out);
+
+
+                }
+            }
+
+            .img-content {
+                @include display(none);
+                @include display-position(absolute);
+                @include transition(all, 0.4s, ease-in-out);
+                @include justify-content(center);
+                @include align-items(center);
+                @include flex-flow(column);
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 2;
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 0.5;
+                    @include transition(all, 0.4s, ease-in-out);
+                }
+            }
+
+            &:hover .img-content {
+                @include flexbox;
+                @include transition(all, 0.4s, ease-in-out);
+            }
+
+
+            &:hover img {
+                @include transition(all, 0.4s, ease-in-out);
+                @include transform(scale(1.2));
+
+
+            }
+        }
+    }
+}
+
+
+/* TESTIMONIAL  */
+
+.tesimonial-section {
+    @include common-padding(0, 80px);
+
+    .tesimonial-module {
+        @include overflow(hidden);
+        margin: 0 auto;
+        margin-top: 50px;
+        max-width: 900px;
+        @include display-position(relative);
+        @include common-padding(0, 50px);
+
+        .swiper-slide {
+            background-color: $dark-bule;
+            color: $white;
+            padding: 20px;
+
+            .tesimonial-module-content {
+                .tesimonial-module-info {
+                    @include flexbox;
+                    @include align-items(flex-end);
+
+                    .testi-img {
+                        max-width: 100px;
+                        line-height: 0;
+                    }
+
+                    .testiname {
+                        margin-left: 15px;
+
+                        h6 {
+                            margin-bottom: 5px;
+                            text-transform: uppercase;
+                        }
+
+                        p {
+                            color: $sceondary-color;
+                            list-style: 1.2em;
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination {
+            @include display-position(absolute);
+            bottom: 0px;
+            width: 100%;
+
+            .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+                background-color: $sceondary-color;
+                @include border-radius(50px);
+                opacity: 1;
+
+                &.swiper-pagination-bullet-active {
+                    background-color: $green-color;
+                }
+            }
+        }
+    }
+
+
+}
