@@ -1,0 +1,91 @@
+form {
+    @include display-position(relative);
+
+    label {
+        font-size: 12px;
+        color: $text-color;
+    }
+
+    .form-group {
+        @include display-position(relative);
+
+        input, .form-select {
+            border: 1px solid $gray-v3;
+            height: 42px;
+            background-color: $gray-v3;
+            width: 100%;
+            @include display-position(relative);
+            @include border-radius(4px);
+            padding-left: 15px;
+            font-size: 12px;
+
+            @include rwd-max(575) {
+                height: 35px;
+            }
+
+            &::-webkit-input-placeholder {
+                /* Edge */
+                font-size: 12px;
+            }
+
+            &:-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                font-size: 12px;
+            }
+
+            &::placeholder {
+
+                font-size: 12px;
+            }
+        }
+
+        textarea  {
+            border: 0px solid;
+            background-color: $gray-v3;
+            width: 100%;
+            @include display-position(relative);
+            @include border-radius(4px);
+            padding-left: 15px;
+            font-size: 12px;
+
+            &::-webkit-input-placeholder {
+                /* Edge */
+                font-size: 12px;
+            }
+
+            &:-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                font-size: 12px;
+            }
+
+            &::placeholder {
+
+                font-size: 12px;
+            }
+        }
+
+
+
+
+
+
+
+        .form__icon {
+            @include display-position(absolute);
+            bottom: 15px;
+            right: 15px;
+            height: 20px;
+            width: 25px;
+            background-image: url(../../images/eye.svg);
+            background-repeat: no-repeat;
+            cursor: pointer;
+           
+
+            &.form__icon_active {
+                 background-image: url(../../images/eye-slash.svg);
+            }
+        }
+
+    }
+
+}

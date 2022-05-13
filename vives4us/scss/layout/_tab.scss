@@ -1,0 +1,162 @@
+.tab-module {
+    margin-left: 25px;
+
+    @include rwd-max(991) {
+        margin-left: 0px;
+    }
+
+    ul.tabs {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+
+        li {
+            background: $gray-v3;
+            color: $text-color;
+            @include display(inline-block);
+            @include border-radius(25px);
+            padding: 14px 20px 11px;
+            cursor: pointer;
+            line-height: 16px;
+            min-width: 80px;
+            text-align: center;
+            border: 1px solid $gray-light;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+
+            &.current {
+                background: $primary-color;
+                color: $white;
+                border: 1px solid $primary-color;
+            }
+
+            &:hover {
+                background: $primary-color;
+                color: $white;
+                border: 1px solid $primary-color;
+            }
+
+            @include rwd-max(767) {
+                padding: 8px 14px 8px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .tab-content {
+        @include display(none);
+
+        &.current {
+            @include display(inherit);
+        }
+
+        ul {
+            @include flexbox;
+            @include flex-wrap(wrap);
+            list-style: none;
+
+            .lis-item {
+                width: 25%;
+                padding: 10px;
+
+                @include rwd-max(1199) {
+                    width: 33%;
+                }
+
+                @include rwd-max(991) {
+                    width: 50%;
+                }
+
+                @include rwd-max(575) {
+                    width: 100%;
+                }
+
+                .video-slide-section {
+                    @include flexbox;
+                    @include flex-flow(column);
+                    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+                    padding: 10px;
+
+                    .video-module {
+                        @include border-radius(10px);
+                        @include flexbox;
+                        width: 100%;
+                        height: 150px;
+
+                        a {
+                            @include flexbox;
+                            width: 100%;
+
+                            img {
+                                @include border-radius(10px);
+                                object-fit: cover;
+                            }
+                        }
+                    }
+
+                    .video-info {
+                        padding-top: 10px;
+
+                        .video-name {
+                            h5 {
+
+                                a {
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 3;
+                                    -webkit-box-orient: vertical;
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                    }
+
+                    .video-man {
+                        @include flexbox;
+                        @include align-items(center);
+
+                        .video-man-img {
+                            width: 20px;
+                            height: 20px;
+                            @include flexbox;
+
+                            img {
+                                @include border-radius(100px);
+                            }
+                        }
+
+                        span {
+                            font-size: 12px;
+                            color: $gray-v2;
+                            font-weight: 500;
+                            margin-left: 8px;
+                        }
+                    }
+
+                    .video-about {
+                        ul {
+                            li {
+                                font-size: 12px;
+                                font-weight: 400;
+                                color: $gray-v2;
+                                padding-right: 20px;
+
+                                span {
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.right-full-screen{
+    .tab-module, .user-bio-section{
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,119 @@
+/* Pupup */
+.modal-dialog {
+    @include rwd(576) {
+        max-width: 880px;
+    }
+
+    .modal-content {
+        .modal-header {
+            .modal-title {
+                font-weight: 500;
+            }
+
+            .btn-close {
+                font-size: 12px;
+                width: 25px;
+                height: 25px;
+                background-color: $gray-v3;
+                @include border-radius(50%);
+                padding: 0;
+            }
+        }
+
+        .modal-body {
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 50px 30px;
+            // height:70vh;
+            // overflow-y: scroll;
+
+            form {
+                .form-group {
+                    margin-bottom: 20px;
+                }
+
+                .radio-text {
+                    margin-bottom: 15px;
+
+                    label {
+                        font-size: 16px;
+                    }
+                }
+
+                @include rwd-max(767) {
+                    @include display(block !important);
+                }
+
+            }
+
+            .otheraccount-link {
+                p {
+                    text-align: center;
+                    font-size: 12px;
+
+                    a {
+                        font-size: 12px;
+                    }
+                }
+
+            }
+
+
+            p {
+                font-size: 14px;
+            }
+
+            .upload-video-popup {
+                text-align: center;
+
+                .upload-video-icon {
+                    text-align: center;
+                    @include flexbox;
+                    @include justify-content(center);
+                    @include align-items(center);
+                    width: 100px;
+                    height: 100px;
+                    background-color: $gray-v3;
+                    @include border-radius(50%);
+                    margin: 0 auto;
+
+                    i {
+                        color: #B1B3B3;
+                        font-size: 40px;
+                    }
+                }
+
+                .small {
+                    font-size: 12px;
+                }
+            }
+
+        }
+
+        .upload-video-file-name {
+            color: $green-color;
+            font-weight: 700;
+        }
+    }
+
+
+    .no-padding {
+        .modal-body {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+}
+
+#login-popup,
+#sing-up-popup {
+    .modal-body {
+        padding-left: 10%;
+        padding-right: 10%;
+
+        @include rwd-max(767) {
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+    }
+}

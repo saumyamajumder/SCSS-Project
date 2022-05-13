@@ -1,0 +1,19 @@
+.page-btn {
+    @include page-btn(transparent, $text-color);
+    border: 1px solid $red-color;
+
+    &:hover {
+        @include page-btn($red-color, $white);
+        border: 1px solid $red-color;
+    }
+}
+
+.page-btn2 {
+    @include page-btn($red-color, $white);
+    border: 1px solid $red-color;
+
+    &:hover {
+        @include page-btn(transparent, $text-color);
+        border: 1px solid $red-color;
+    }
+}

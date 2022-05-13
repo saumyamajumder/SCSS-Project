@@ -1,0 +1,106 @@
+.user-bio-section {
+    margin-left: 25px;
+    margin-right: 10px;
+
+
+    @include rwd-max(991) {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .athor-follow {
+        @include rwd-max(575) {
+            margin-left: 65px;
+        }
+    }
+
+    .user-bio-heading-top {
+        @include flexbox;
+        @include justify-content(space-between);
+        padding-bottom: 30px;
+        border-bottom: 1px solid #CECECE;
+
+        @include rwd-max(575) {
+            @include flex-flow(column);
+        }
+
+        .user-bio-heading-left {
+            @include flexbox;
+            @include align-items(center);
+
+            .user-bio-img {
+                width: 60px;
+                height: 60px;
+                @include border-radius(50px);
+
+                img {
+                    @include border-radius(50px);
+                }
+            }
+
+            .user-bio-heading {
+                @include flexbox;
+                @include flex-flow(column);
+                margin-left: 10px;
+
+                h2 {
+                    margin-bottom: 0;
+                    font-size: 24px;
+                }
+
+                span {
+                    font-size: 14px;
+                    color: $gray-v2;
+                }
+            }
+        }
+
+        .athor-follow {
+            @include rwd-max(575) {
+                margin-left: 65px;
+            }
+        }
+    }
+
+    .bio-tab {
+        margin-top: 30px;
+
+        .tab-module {
+            .tabs {
+                margin-left: 0px;
+            }
+
+            .bio-content-module {
+                padding-top: 30px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #CECECE;
+
+                h4 {
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
+
+                .bio-detals-info {
+
+
+                    .bio-detals-info-column {
+                        margin-bottom: 15px;
+
+                        span {
+                            &:first-child {
+                                margin-right: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .tab-module{
+        margin-left: 0;
+    }
+}
