@@ -1,0 +1,88 @@
+form {
+    .form-group {
+        margin-bottom: 20px;
+        @include display-position(relative);
+
+        input,
+        select {
+            height: 50px;
+            @include border-radius(30px);
+            padding-left: 30px;
+            width: 100%;
+            border-color: #CEC5DD !important;
+            color: #919191;
+
+            &::-webkit-input-placeholder {
+                /* Edge */
+                color: #919191;
+                font-size: 14px;
+            }
+
+            &:-ms-input-placeholder {
+                /* Internet Explorer */
+                color: #919191;
+                font-size: 14px;
+            }
+
+            &::placeholder {
+                color: #919191;
+                font-size: 14px;
+            }
+        }
+
+        textarea {
+            @include border-radius(30px);
+            padding-left: 20px;
+
+            &::-webkit-input-placeholder {
+                /* Edge */
+                color: #919191;
+                font-size: 14px;
+            }
+
+            &:-ms-input-placeholder {
+                /* Internet Explorer */
+                color: #919191;
+                font-size: 14px;
+            }
+
+            &::placeholder {
+                color: #919191;
+                font-size: 14px;
+            }
+        }
+    }
+    
+}
+.form-control:focus{
+    box-shadow:none !important;
+}
+
+.form-icon {
+    @include display-position(absolute);
+    top: 13px;
+    right: 25px;
+}
+
+
+#birthday {
+    width: 100%;
+    border: 1px solid #CEC5DD;
+    padding-right: 10px;
+}
+
+#formFile {
+    background-color: #CEC5DD;
+}
+
+#msg {
+    height: 50px;
+}
+
+input[type='file'] {
+    text-indent: -999em;
+    outline: none;
+    width: 100%;
+    height: 100%;
+
+}

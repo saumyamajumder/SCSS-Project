@@ -1,0 +1,242 @@
+// Our services
+
+.our-services {
+    .our-services-details {
+        box-shadow: 3px 0px 32px rgba(0, 0, 0, 0.10);
+        margin-top: 50px;
+
+        @include xxl-min {
+            margin-top: 80px;
+        }
+
+        .our-services-details-module {
+            height: 100%;
+            @include overflow(hidden);
+
+            .our-services-details-module-text {
+                padding: 30px;
+                min-height: 380px;
+                @include display-position(relative);
+
+                @include xxl-min {
+                    padding: 30px;
+                }
+
+                @include md-max {
+                    padding: 20px;
+                    min-height: auto;
+                }
+            }
+
+            .our-services-details-module-image {
+                @include display-position(relative);
+                @include flexbox;
+                @include overflow(hidden);
+                cursor: pointer;
+                height: 380px;
+
+                &:before {
+                    @include display-position(absolute);
+                    content: '';
+                    top: 0;
+                    width: 0;
+                    height: 0;
+                    border: 40px solid transparent;
+                    border-top-color: $white-color;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    z-index: 2;
+                }
+
+                @include md-max {
+                    height: auto;
+                }
+
+                img {
+                    @include transition(all, .4s, ease-in-out);
+
+                    &:hover {
+                        @include transform(scale(1.2));
+                        @include transition(all, .4s, ease-in-out);
+                    }
+                }
+
+            }
+
+            &.revers {
+                & .our-services-details-module-image {
+
+                    &::after {
+                        @include display-position(absolute);
+                        content: '';
+                        bottom: 0;
+                        width: 0;
+                        height: 0;
+                        border: 40px solid transparent;
+                        border-bottom-color: $white-color;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        z-index: 2;
+                        top: auto;
+                        @include md-max{
+                            @include display(none);
+                        }
+                    }
+
+                    &::before {
+                        @include display(none);
+
+                        @include md-max {
+                            @include display(block);
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    }
+}
+
+
+//  Services Provide
+
+.services-provide {
+    @include display-position(relative);
+    z-index: 1;
+    @include background-img(cover, no-repeat, center);
+    background-attachment: fixed;
+    @include common-padding(100px, 100px);
+
+    @include xxl-min {
+        @include common-padding(180px, 180px);
+    }
+
+    @include lg-max {
+        @include common-padding(90px, 90px);
+    }
+
+    @include md-max {
+        @include common-padding(60px, 60px);
+    }
+
+    &:before {
+        @include display-position(absolute);
+        content: '';
+        background-color: $blue-color;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .5;
+        z-index: -1;
+    }
+
+    .content-para {
+        @include common-padding(50px, 70px);
+
+        @include xxl-min {
+            @include common-padding(100px, 130px);
+        }
+
+        @include lg-max {
+            @include common-padding(40px, 60px);
+        }
+
+        @include md-max {
+            @include common-padding(30px, 50px);
+        }
+    }
+}
+
+
+//  WHY CHOOSE
+
+.why-choose-us {
+    .row {
+        counter-reset: my-awesome-counter;
+        margin-top: 50px;
+
+        .choose-module {
+            counter-increment: my-awesome-counter;
+            padding: 30px;
+            box-shadow: 3px 0px 60px rgb(0 0 0 / 5%);
+            @include transition(all, .4s, ease-in-out);
+            cursor: pointer;
+
+            @include xxl-min {
+                padding: 40px;
+            }
+
+            @include md-max {
+                margin-bottom: 20px;
+            }
+
+            .heading {
+                @include flexbox;
+                color: $blue-color;
+                @include align-items(center);
+                margin-bottom: 15px;
+
+                @include xxl-min {
+                    margin-bottom: 20px;
+                }
+
+                @include md-max {
+                    @include flex-flow(column);
+                    @include align-items(flex-start);
+                }
+
+                .h5 {
+                    color: $blue-color;
+                }
+
+                .count {
+                    margin-right: 20px;
+
+                    @include md-max {
+                        margin-right: 0px;
+                        margin-bottom: 10px;
+                    }
+
+                    &::before {
+                        content: "0"counter(my-awesome-counter);
+                        @include font-weight(600);
+                        font-size: 20px;
+                        @include flexbox;
+                        @include justify-content(center);
+                        @include align-items(center);
+                        @include border(1px, $blue-color);
+                        @include border-radius(50%);
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                }
+            }
+
+            &:hover {
+                background-color: $blue-color;
+                @include transition(all, .4s, ease-in-out);
+
+                & .h5 {
+                    color: $white-color;
+                }
+
+                & .count {
+                    &::before {
+                        color: $white-color;
+                        @include border(1px, $white-color);
+                    }
+                }
+
+                & p {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

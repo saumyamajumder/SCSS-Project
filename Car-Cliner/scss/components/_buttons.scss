@@ -1,0 +1,56 @@
+.page-btn {
+    @include page-btn ($blue-color, $white-color);
+
+    &:hover {
+        @include page-btn ($black-color, $white-color);
+    }
+}
+
+.page-btn-dark {
+    @include page-btn ($black-color, $white-color);
+
+    &:hover {
+        @include page-btn ($blue-color, $white-color);
+    }
+}
+.page-btn-light {
+    @include page-btn ($white-color, $black-color);
+
+    &:hover {
+        @include page-btn ($blue-color, $white-color);
+    }
+}
+// A tag
+
+a {
+    color: $black-color;
+    @include transition(all, 0.4s, ease-in-out);
+    text-decoration: none;
+
+    &:hover {
+        @include transition(all, 0.4s, ease-in-out);
+        color: $blue-color;
+    }
+}
+
+.lightlinks {
+    color: $white-color;
+    @include transition(all, 0.4s, ease-in-out);
+    text-decoration: none;
+
+    &:hover {
+        @include transition(all, 0.4s, ease-in-out);
+        color: $light-gray;
+    }
+}
+
+.darklinks {
+    color: $black-color;
+    text-decoration: none;
+    @include transition(all, 0.4s, ease-in-out);
+
+    &:hover {
+        @include transition(all, 0.4s, ease-in-out);
+        color: $blue-color;
+    }
+}

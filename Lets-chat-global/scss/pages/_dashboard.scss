@@ -1,0 +1,601 @@
+// dashboard
+
+.dashboard {
+    .dashboard-container {
+        padding-left: 300px;
+
+        @include md-max {
+            padding-left: 0px;
+        }
+
+        .dashboard-left {
+            width: 300px;
+            background-color: $white;
+            box-shadow: 0px 4px 20px 0 rgb(197 123 255 / 20%);
+            height: 100vh;
+            @include transition(all, 0.5s, ease-in-out);
+            overflow-y: auto;
+            @include display-position(absolute);
+            left: 0;
+            top: 0;
+
+            .logo {
+                padding: 20px 20px 10px;
+            }
+
+            .dashboard-menu {
+                ul {
+                    list-style: none;
+                    margin-top: 55px;
+
+                    li {
+                        margin-bottom: 10px;
+                        line-height: normal;
+
+                        a {
+                            font-size: 16px;
+                            @include font-weight(400);
+                            @include flexbox;
+                            @include align-items(center);
+                            color: #777777;
+                            line-height: 18px;
+                            z-index: 2;
+                            @include transition(all, 0.5s, ease-in-out);
+
+                            .left-icon {
+                                padding: 15px 15px 15px 35px;
+                                @include display(inline-block);
+                                @include display-position(relative);
+                                z-index: 1;
+                                @include transition(all, 0.5s, ease-in-out);
+                                margin-right: 5px;
+
+                                .dashboard-icon {
+                                    fill: #777777;
+                                    @include transition(all, 0.5s, ease-in-out);
+                                }
+
+                                &:before {
+                                    content: '';
+                                    @include display-position(absolute);
+                                    width: 0%;
+                                    height: 100%;
+                                    left: 0;
+                                    top: 0;
+                                    background-color: $sky-color;
+                                    z-index: -1;
+                                    @include transition(all, 0.5s, ease-in-out);
+                                    border-radius: 0 30px 30px 0;
+                                }
+
+                            }
+
+                            &:hover {
+                                .left-icon {
+                                    &:before {
+                                        width: 100%;
+                                        @include transition(all, 0.5s, ease-in-out);
+                                    }
+
+                                    .dashboard-icon {
+                                        fill: #fff;
+                                        @include transition(all, 0.5s, ease-in-out);
+                                    }
+                                }
+                            }
+
+                            &.active {
+                                @include font-weight(500);
+
+                                .left-icon {
+                                    &:before {
+                                        width: 100%;
+                                    }
+
+                                    .dashboard-icon {
+                                        fill: #fff;
+                                        @include transition(all, 0.5s, ease-in-out);
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            @include md-max {
+
+                @include transition(all, 0.5s, ease-in-out);
+                @include display-position(absolute);
+                width: 250px;
+                left: -250px;
+                z-index: 5;
+                top: 80px;
+
+                &.dd {
+                    left: 0px;
+                }
+
+            }
+
+        }
+
+        .dashboard-right {
+            flex: 1;
+            background-color: #FCF9FF;
+            overflow-y: auto;
+            height: 100vh;
+
+            @include md-max {
+                width: 100%;
+            }
+
+            .dashboard-right-header {
+                @include flexbox;
+                @include justify-content(space-between);
+                @include align-items(center);
+                padding: 25px;
+                border-bottom: 1px solid #C2CBD4;
+
+                @include md-max {
+                    padding: 10px;
+                }
+
+                .heading-name {
+                    @include display-position(relative);
+
+                    ul {
+                        list-style: none;
+                        @include flexbox;
+                        @include align-items(center);
+
+                        li {
+                            line-height: normal;
+
+                            &.user-image {
+                                margin-right: 10px;
+                            }
+
+                            p {
+                                font-size: 16px;
+                                @include font-weight(500);
+                                margin-bottom: 0;
+                                line-height: 18px;
+                            }
+
+                            a {
+                                @include font-weight(500);
+                                color: rgba(158, 151, 164, 1);
+                                font-size: 14px;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+
+                    .left-div-arrow-open-close {
+                        @include display(none);
+
+                        @include md-max {
+                            @include display(block);
+                            @include display-position(absolute);
+                            top: 5px;
+
+                        }
+                    }
+
+                    & .h3 {
+                        @include md-max {
+                            padding-left: 25px;
+                        }
+                    }
+                }
+            }
+
+            .dashboard-body {
+                padding: 40px 25px;
+
+                .dashboard-body-row {
+                    // @include flexbox;
+
+                    @include flex-wrap(wrap);
+
+                    .dashboard-body-col {
+                        width: calc((100% - 50px) / 5);
+                        margin: 5px;
+                        text-align: center;
+                        padding: 15px;
+                        background-color: $white;
+                        cursor: pointer;
+                        @include border-radius(30px);
+
+                        @include lg-max {
+                            width: calc((100% - 40px) / 4);
+                        }
+
+                        @include md-max {
+                            width: calc((100% - 30px) / 3);
+                        }
+
+                        @include sm-max {
+                            width: calc((100% - 20px) / 2);
+                        }
+
+                        .dashboard-icon {
+                            width: 80px;
+                            height: 80px;
+                            margin: 0 auto;
+                            background-color: $blue-color1;
+                            padding: 25px;
+                            border-radius: 50%;
+                            @include flexbox;
+                            border: 5px solid #ecf0f5;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                                filter: brightness(0) invert(1);
+                            }
+
+                            @include xxl-min {
+                                width: 100px;
+                                height: 100px;
+                            }
+                        }
+
+                        .dashboard-content-content {
+                            margin-top: 15px;
+
+                            h4 {
+                                color: $blue-color1;
+
+                            }
+
+                            @include xl-max {
+                                .h4 {
+                                    font-size: 25px;
+                                }
+
+                                .h6 {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+
+                        &:hover,
+                        &.active {
+                            background-color: $sky-color;
+                            color: $white;
+
+                            .dashboard-icon {
+                                // border: 5px solid $white;
+                                background-color: $white;
+
+                                img {
+                                    filter: none;
+                                }
+                            }
+
+                            .dashboard-content-content {
+
+                                .h4,
+                                h6 {
+                                    color: $white;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.d-box {
+    i {
+        color: $blue-color;
+        font-size: 18px;
+    }
+}
+
+.sscheduled {
+
+    .sscheduled-module {
+        padding: 15px;
+        border: 1px solid #C5C5C5;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        @include sm-max{
+            @include flex-flow(column);
+        }
+    }
+}
+
+
+
+
+
+// dashboard
+
+// .dashboard {
+//     .dashboard-container {
+//         @include flexbox;
+
+//         .dashboard-left {
+//             width: 300px;
+//             background-color: $white;
+//             box-shadow: 0px 4px 20px 0 rgb(197 123 255 / 20%);
+//             height: 100vh;
+//             @include transition(all, 0.5s, ease-in-out);
+//             overflow-y: auto;
+
+//             .logo {
+//                 padding: 20px 20px 10px;
+//             }
+
+//             .dashboard-menu {
+//                 ul {
+//                     list-style: none;
+//                     margin-top: 55px;
+
+//                     li {
+//                         margin-bottom: 10px;
+//                         line-height: normal;
+
+//                         a {
+//                             font-size: 16px;
+//                             @include font-weight(400);
+//                             @include flexbox;
+//                             @include align-items(center);
+//                             color: #777777;
+//                             line-height: 18px;
+//                             z-index: 2;
+//                             @include transition(all, 0.5s, ease-in-out);
+
+//                             .left-icon {
+//                                 padding: 15px 15px 15px 35px;
+//                                 @include display(inline-block);
+//                                 @include display-position(relative);
+//                                 z-index: 1;
+//                                 @include transition(all, 0.5s, ease-in-out);
+//                                 margin-right: 15px;
+
+//                                 .dashboard-icon {
+//                                     fill: #777777;
+//                                     @include transition(all, 0.5s, ease-in-out);
+//                                 }
+
+//                                 &:before {
+//                                     content: '';
+//                                     @include display-position(absolute);
+//                                     width: 0%;
+//                                     height: 100%;
+//                                     left: 0;
+//                                     top: 0;
+//                                     background-color: $sky-color;
+//                                     z-index: -1;
+//                                     @include transition(all, 0.5s, ease-in-out);
+//                                     border-radius: 0 30px 30px 0;
+//                                 }
+
+//                             }
+
+//                             &:hover {
+//                                 .left-icon {
+//                                     &:before {
+//                                         width: 100%;
+//                                         @include transition(all, 0.5s, ease-in-out);
+//                                     }
+
+//                                     .dashboard-icon {
+//                                         fill: #fff;
+//                                         @include transition(all, 0.5s, ease-in-out);
+//                                     }
+//                                 }
+//                             }
+
+//                             &.active {
+//                                 @include font-weight(500);
+
+//                                 .left-icon {
+//                                     &:before {
+//                                         width: 100%;
+//                                     }
+
+//                                     .dashboard-icon {
+//                                         fill: #fff;
+//                                         @include transition(all, 0.5s, ease-in-out);
+//                                     }
+//                                 }
+//                             }
+//                         }
+
+//                     }
+//                 }
+//             }
+
+//             @include md-max {
+
+//                 @include transition(all, 0.5s, ease-in-out);
+//                 @include display-position(absolute);
+//                 width: 0px;
+//                 z-index: 5;
+
+//                 &.open-div {
+//                     width: 250px;
+
+//                     @include transition(all, 0.5s, ease-in-out);
+//                 }
+//             }
+
+//         }
+
+//         .dashboard-right {
+//             width: calc(100% - 300px);
+//             background-color: #FCF9FF;
+
+//             @include md-max {
+//                 width: 100%;
+//             }
+
+//             .dashboard-right-header {
+//                 @include flexbox;
+//                 @include justify-content(space-between);
+//                 @include align-items(center);
+//                 padding: 25px;
+//                 border-bottom: 1px solid #C2CBD4;
+
+//                 .heading-name {
+//                     @include display-position(relative);
+
+//                     ul {
+//                         list-style: none;
+//                         @include flexbox;
+//                         @include align-items(center);
+
+//                         li {
+//                             line-height: normal;
+
+//                             &.user-image {
+//                                 margin-right: 10px;
+//                             }
+
+//                             p {
+//                                 font-size: 16px;
+//                                 @include font-weight(500);
+//                                 margin-bottom: 0;
+//                                 line-height: 18px;
+//                             }
+
+//                             a {
+//                                 @include font-weight(500);
+//                                 color: rgba(158, 151, 164, 1);
+//                                 font-size: 14px;
+//                                 line-height: 16px;
+//                             }
+//                         }
+//                     }
+
+//                     .left-div-arrow-open-close {
+//                         @include display(none);
+
+//                         @include md-max {
+//                             @include display(block);
+//                             @include display-position(absolute);
+//                             top: 5px;
+
+//                         }
+//                     }
+
+//                     & .h3 {
+//                         @include md-max {
+//                             padding-left: 25px;
+//                         }
+//                     }
+//                 }
+//             }
+
+//             .dashboard-body {
+//                 padding: 40px 25px;
+
+//                 .dashboard-body-row {
+//                     @include flexbox;
+
+//                     @include flex-wrap(wrap);
+
+//                     .dashboard-body-col {
+//                         width: calc((100% - 50px) / 5);
+//                         margin: 5px;
+//                         text-align: center;
+//                         padding: 15px;
+//                         background-color: $white;
+//                         cursor: pointer;
+//                         @include border-radius(30px);
+
+//                         @include lg-max {
+//                             width: calc((100% - 40px) / 4);
+//                         }
+
+//                         @include md-max {
+//                             width: calc((100% - 30px) / 3);
+//                         }
+
+//                         @include sm-max {
+//                             width: calc((100% - 20px) / 2);
+//                         }
+
+//                         .dashboard-icon {
+//                             width: 80px;
+//                             height: 80px;
+//                             margin: 0 auto;
+//                             background-color: $blue-color1;
+//                             padding: 25px;
+//                             border-radius: 50%;
+//                             @include flexbox;
+//                             border: 5px solid #ecf0f5;
+
+//                             img {
+//                                 width: 100%;
+//                                 height: 100%;
+//                                 object-fit: contain;
+//                                 filter: brightness(0) invert(1);
+//                             }
+
+//                             @include xxl-min {
+//                                 width: 100px;
+//                                 height: 100px;
+//                             }
+//                         }
+
+//                         .dashboard-content-content {
+//                             margin-top: 15px;
+
+//                             h4 {
+//                                 color: $blue-color1;
+
+//                             }
+
+//                             @include xl-max {
+//                                 .h4 {
+//                                     font-size: 25px;
+//                                 }
+
+//                                 .h6 {
+//                                     font-size: 18px;
+//                                 }
+//                             }
+//                         }
+
+//                         &:hover,
+//                         &.active {
+//                             background-color: $sky-color;
+//                             color: $white;
+
+//                             .dashboard-icon {
+//                                 // border: 5px solid $white;
+//                                 background-color: $white;
+
+//                                 img {
+//                                     filter: none;
+//                                 }
+//                             }
+
+//                             .dashboard-content-content {
+
+//                                 .h4,
+//                                 h6 {
+//                                     color: $white;
+//                                 }
+
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

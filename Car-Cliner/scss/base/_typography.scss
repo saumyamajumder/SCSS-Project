@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+html{
+    font-size: 17px;
+    @include md-max{
+        font-size: 15px;
+    }
+}
+body,
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6,
+p,
+li,
+a {
+    font-family: 'Poppins', sans-serif;
+    color: $black-color;
+}
+
+.h1,
+h1 {
+    font-size: 3.125rem;
+    line-height: 1.2em;
+    @include font-weight(600);
+    margin-bottom: 10px;
+
+    @include md-max {}
+
+
+
+}
+
+.h2,
+h2 {
+    font-size: 2.5rem;
+    line-height: 1.2em;
+    @include font-weight(600);
+    margin-bottom: 10px;
+
+    @include md-max {}
+
+}
+
+.h3,
+h3 {
+    font-size: 1.875rem;
+    line-height: 1.2em;
+    @include font-weight(600);
+    margin-bottom: 10px;
+
+    @include md-max {}
+
+}
+
+.h4,
+h4 {
+    font-size: 1.563rem;
+    line-height: 1.2em;
+    @include font-weight(600);
+    margin-bottom: 10px;
+
+    @include md-max {}
+}
+
+.h5,
+h5 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    @include font-weight(600);
+    margin-bottom: 10px;
+
+    @include md-max {
+      
+    }
+
+}
+
+.h6,
+h6 {
+    font-size: 1.125rem;
+    line-height: 1.2em;
+    @include font-weight(600);
+    margin-bottom: 10px;
+
+
+}
+
+body,
+p,
+li,
+a {
+ 
+    line-height: 1.6em;
+    @include font-weight(400);
+
+    @include md-max {
+  
+        line-height: 1.4em;
+    }
+}

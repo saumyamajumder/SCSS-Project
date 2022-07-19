@@ -1,0 +1,14 @@
+// About Us
+
+.internal-content-section {
+   &.services-page{
+       .inner-content{
+           .home-services-module-heading-text{
+               margin-left: 20px;
+               .h4{
+                   color: $black;
+               }
+           }
+       }
+   }
+}

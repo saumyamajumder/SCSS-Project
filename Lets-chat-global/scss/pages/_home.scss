@@ -1,0 +1,243 @@
+// How It Work
+
+.how-it-work {
+    background-color: $sky-light;
+    padding-bottom: 50px;
+    @include display-position(relative);
+    @include overflow(hidden);
+
+    @include md-max {
+        padding-bottom: 30px;
+    }
+
+    &:before {
+        content: '';
+        @include display-position(absolute);
+        left: -120px;
+        bottom: 0;
+        background-image: url(../../images/Vector-10.png);
+        @include background-img(cover, no-repeat, center);
+        width: 210px;
+        height: 230px;
+    }
+
+    &::after {
+        content: '';
+        @include display-position(absolute);
+        bottom: 0;
+        right: 0;
+        background-image: url(../../images/Vector-3.png);
+        @include background-img(cover, no-repeat, center);
+        width: 150px;
+        height: 150px;
+
+
+    }
+
+    .how-it-work-content-row {
+
+        .how-it-work-content-module {
+            padding: 20px;
+
+            .how-it-work-img {
+                width: 160px;
+                margin: 0 auto;
+                @include display-position(relative);
+                z-index: 2;
+
+                &.big-image-world {
+                    width: 100%;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: -75px;
+                        width: 130px;
+                        top: 50%;
+                        border-bottom: 2px dashed $sky-color;
+                        z-index: -1;
+
+                        @include md-max {
+                            @include display(none);
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: -85px;
+                        width: 85px;
+                        top: 50%;
+                        border-bottom: 2px dashed $sky-color;
+                        z-index: -1;
+
+                        @include md-max {
+                            @include display(none);
+                        }
+                    }
+                }
+            }
+
+            .how-it-work-text {
+                h5 {
+                    color: #5E949C;
+                }
+            }
+
+        }
+    }
+
+
+
+}
+
+//  Client Testimonial
+.what-our-client-says {
+    @include display-position(relative);
+    @include overflow(hidden);
+
+    .content {
+        h2 {
+            margin-bottom: 0;
+
+            @include md-max {
+                text-align: center;
+
+                br {
+                    @include display(none);
+                }
+            }
+        }
+    }
+
+    .what-our-client-says-module {
+
+
+        .swiper-section {
+            &::before {
+                @include display-position(absolute);
+                content: '';
+                left: 20px;
+                bottom: 70px;
+                background-image: url(../../images/Vector-10.png);
+                @include background-img(cover, no-repeat, center);
+                width: 230px;
+                height: 240px;
+            }
+
+            .swiper-container {
+                padding-bottom: 30px;
+                padding-top: 40px;
+
+                .flex-card {
+                    @include flexbox;
+                    width: 100%;
+                    margin-top: 0px;
+                    @include align-items(center);
+                    @include display-position(relative);
+
+                    @include md-max {
+                        @include flex-flow(column);
+                    }
+
+                    .flex-card__image {
+                        max-width: 500px;
+                        @include display-position(relative);
+
+                        @include md-max {
+                            max-width: 400px;
+                        }
+
+                        &::after {
+                            content: '';
+                            @include display-position(absolute);
+                            top: -40px;
+                            right: -35px;
+                            background-image: url(../../images/testi-icon.png);
+                            @include background-img(cover, no-repeat, Center);
+                            width: 80px;
+                            height: 80px;
+
+                            @include sm-max {
+                                @include display(none);
+                            }
+                        }
+
+                        @include md-max {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    .flex-card__text {
+                        max-width: calc(100% - 500px);
+                        padding-left: 75px;
+
+                        @include md-max {
+                            max-width: 100%;
+                        }
+
+                        .h3 {
+                            color: #5E5E5E;
+                            @include font-weight(400);
+                            margin-bottom: 20px;
+                        }
+
+                        h5 {
+                            color: #353535;
+                            line-height: 30px;
+                            margin-bottom: 0;
+                            ;
+                        }
+
+                        h6 {
+                            color: #9D9D9D;
+                            @include font-weight(400);
+                            line-height: 30px;
+                        }
+
+                        p {
+                            color: $text-light;
+                            font-size: 16px;
+                            margin-bottom: 35px;
+
+                            @include md-max {
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        @include md-max {
+                            padding-left: 0px;
+                            text-align: center;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+
+// ABOUT US
+
+.about-us {
+    background-color: $gray-light;
+    @include display-position(relative);
+
+    &:after {
+        content: '';
+        bottom: 0;
+        right: 0;
+        background-image: url(../../images/Vector-11.png);
+        @include background-img(cover, no-repeat, Center);
+    }
+
+    .h4 {
+        margin-bottom: 28px;
+    }
+
+    .page-btn {
+        margin-top: 30px;
+    }
+}

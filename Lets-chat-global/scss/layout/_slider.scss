@@ -1,0 +1,74 @@
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    @include overflow(hidden);
+
+    .swiper-slide {
+        /* Center slide text vertically */
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+
+
+    }
+
+    .swiper-button-next {
+        right: auto;
+        bottom: 0;
+        top: auto;
+        left: 450px;
+        @include flexbox;
+        @include align-items(flex-end);
+        color: #A4B5BA;
+        font-size: 20px;
+
+        @include md-max {
+            left: auto;
+            right: 40px;
+        }
+    }
+
+    .swiper-button-prev {
+        right: auto;
+        bottom: 0;
+        top: auto;
+        left: 410px;
+        @include flexbox;
+        @include align-items(flex-end);
+        color: #A4B5BA;
+        font-size: 20px;
+
+        @include md-max {
+            left: 0;
+        }
+
+    }
+}
+
+.what-our-client-says {
+    .swiper-button-next {
+        background-image: none;
+
+        img {
+            width: 50px;
+            height: 14px;
+        }
+    }
+
+    .swiper-button-prev {
+        background-image: none;
+
+        img {
+            width: 20px;
+            height: 14px;
+        }
+    }
+}
+
+
+/* sign up page slider */
+.swiper-sign-up {
+    .swiper-pagination {
+        bottom: 110px;
+    }
+}

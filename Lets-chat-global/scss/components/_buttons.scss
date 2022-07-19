@@ -1,0 +1,84 @@
+.page-btn {
+    @include page-btn($blue-color, $white);
+    border: 1px solid $blue-color;
+
+    &::before {
+        content: "\f105";
+        font-family: 'Font Awesome 5 Pro';
+        @include display-position(absolute);
+        right: 30px;
+    }
+
+    @include xxl-min {
+        // padding: 8px 40px 6px 40px;
+        padding: 12px 80px 10px 30px;
+    }
+
+
+    &:hover {
+        @include page-btn($green-color, $white);
+        border: 1px solid $green-color;
+
+        &::before {
+            right: 30px;
+        }
+
+        @include xxl-min {
+            // padding: 8px 40px 6px 40px;
+            padding: 12px 80px 10px 30px;
+        }
+    }
+}
+
+.page-btn2 {
+    @include page-btn($green-color, $white);
+    border: 1px solid $green-color;
+
+    &::before {
+        content: "\f105";
+        font-family: 'Font Awesome 5 Pro';
+        @include display-position(absolute);
+        right: 30px;
+    }
+
+    @include xxl-min {
+        // padding: 8px 40px 6px 40px;
+        padding: 12px 80px 10px 30px;
+    }
+
+    &:hover {
+        @include page-btn($blue-color, $white);
+        border: 1px solid $blue-color;
+
+        &::before {
+            right: 30px;
+        }
+
+        @include xxl-min {
+            // padding: 8px 40px 6px 40px;
+            padding: 12px 80px 10px 30px;
+        }
+    }
+
+}
+
+.before-none {
+    padding: 7px 30px !important;
+    text-align: center;
+
+    &::before {
+        @include display(none);
+    }
+}
+
+
+.page-btn-transparent {
+    @include page-btn(transparent, $text-color);
+    text-align: center !important;
+    padding: 7px 30px !important;
+}
+
+.page-btn2-color {
+    text-align: center !important;
+    padding: 7px 30px !important;
+}

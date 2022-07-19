@@ -1,0 +1,55 @@
+// banner
+
+.banner {
+    @include common-padding(100px, 100px);
+    @include display-position(relative);
+
+    @include md-max {
+        @include common-padding(70px, 130px);
+    }
+
+    @include sm-max {
+        @include common-padding(50px, 100px);
+    }
+
+    .banner-content {
+        @include sm-max {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .h1 {
+            font-size: 3.938rem;
+
+            @include xxl-min {
+                font-size: 4.688rem;
+            }
+
+            @include lg-max {
+                font-size: 2.688rem;
+            }
+        }
+
+        p {
+            margin: 25px 0 30px;
+
+            @include xxl-min {
+                margin: 40px 0 45px;
+            }
+
+            @include md-max {
+                margin: 15px 0 20px;
+
+            }
+        }
+
+        .page-btn {
+            margin-right: 15px;
+
+            @include md-max {
+                margin-right: 0px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

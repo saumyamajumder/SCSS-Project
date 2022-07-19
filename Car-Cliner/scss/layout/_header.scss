@@ -1,0 +1,58 @@
+header {
+    @include common-padding(20px, 20px);
+
+    .header-social-section {
+        ul {
+            li {
+                font-size: 16px;
+                margin: 0 20px;
+                @include md-max{
+                    margin: 0 15px;
+                }
+
+                @include xxl-min {
+                    margin: 0 39px;
+                }
+
+                .header-social-section-icon {
+                    margin-right: 10px;
+                    @include flexbox;
+                    @include align-items(center);
+
+                    @include md-max {
+                        @include display(none);
+                    }
+                }
+
+                .header-social-section-text {
+                    margin-right: 10px;
+                    font-size: 16px;
+                    @include md-max {
+                        @include display(none);
+                    }
+                }
+
+                a {
+                    font-size: 16px;
+
+                    .responsive-icon {
+                        @include display(none);
+                        @include md-max {
+                            @include display(block);
+                            width: 16px;
+                        }
+                    }
+                    .text-number{
+                        @include md-max {
+                            @include display(none);
+                        } 
+                    }
+                }
+
+                @include lg-max {
+                    @include flex-flow(column);
+                }
+            }
+        }
+    }
+}

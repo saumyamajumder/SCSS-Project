@@ -1,0 +1,149 @@
+// banner slider
+
+.banner-slider {
+    .swiper-arrow-nevigitor {
+        @include display-position(absolute);
+        @include transform(translateY(-50%));
+        right: 20px;
+        top: 50%;
+        @include md-max{
+            top: auto;
+            bottom: 70px;
+            right: auto;
+            width: 100px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            background-color: $black-color;
+            color: $white-color;
+            width: 40px;
+            height: 40px;
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(center);
+            @include transition(all, .4s, ease-in-out);
+
+            &:hover {
+                background-color: $blue-color;
+                @include transition(all, .4s, ease-in-out);
+            }
+        }
+
+        .swiper-button-prev {
+            left: -50px;
+            top: 50px;
+
+            &::after {
+                @include display(none);
+            }
+            @include  md-max{
+                left: 0;
+                top: auto;
+            }
+        }
+
+        .swiper-button-next {
+
+            &::after {
+                @include display(none);
+            }
+        }
+    }
+}
+
+
+// Testimonial Slider
+
+.testimonial-slider-section {
+
+
+    .testimonial-slider-module {
+        @include flexbox;
+        @include align-items(center);
+        width: 80%;
+        margin: 0 auto;
+        box-shadow: 3px 0px 32px rgba(0, 0, 0, 0.10);
+        padding: 50px 45px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        @include xxl-min {
+            padding: 75px 65px;
+        }
+        @include md-max {
+            width: 90%;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+        }
+        @include sm-max{
+            width: 100%;
+        }
+
+        .testi-image {
+            width: 100px;
+        }
+
+        .testi-content {
+            width: calc(100% - 100px);
+            margin-left: 40px;
+
+            @include xxl-min {
+                margin-left: 50px;
+            }
+        }
+    }
+
+    .swiper-arrow-nevigitor {
+        @include sm-max{
+            @include flexbox;
+            @include justify-content(space-around);
+            margin-top: 25px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 40px;
+            height: 40px;
+            background: $black-color;
+            color: $white-color;
+            border-radius: 50%;
+            @include transition(all, .4s, ease-in-out);
+
+            &:hover {
+                background-color: $blue-color;
+                @include transition(all, .4s, ease-in-out);
+            }
+            @include sm-max{
+                @include display-position(relative);
+               
+            }
+        }
+
+        .swiper-button-prev {
+            @include md-max {
+                left: -25px;
+            }
+            @include sm-max{
+                left: 0;
+               
+            }
+            &::after {
+                @include display(none);
+            }
+        }
+
+        .swiper-button-next {
+            @include md-max {
+                right: -25px;
+            }
+            @include sm-max{
+             
+                right: 0;
+            }
+            &::after {
+                @include display(none);
+            }
+        }
+    }
+}

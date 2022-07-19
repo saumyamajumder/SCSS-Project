@@ -1,0 +1,90 @@
+// FOOTER
+
+footer {
+    .footer-heading {
+        margin-bottom: 20px;
+    }
+
+    .footer-conent {
+        ul {
+            list-style: none;
+
+            li {
+                color: $white-color;
+                @include flexbox;
+                opacity: .5;
+                @include align-items(center);
+
+                span {
+                    margin-right: 10px;
+                    @include flexbox;
+                    width: 20px;
+                    opacity: .5;
+                }
+
+                a {
+                    color: $white-color;
+                    opacity: .5;
+                }
+            }
+        }
+
+        form {
+            input {
+                border-radius: 0;
+                height: 40px;
+            }
+
+            .btn {
+                @include border(1px, $blue-color);
+                @include border-radius(0);
+
+                &:hover {
+                    @include border(1px, $white-color);
+                    @include border-radius(0);
+                }
+            }
+        }
+    }
+
+    .bottom-footer-content {
+        margin-top: 60px;
+
+        @include md-max {
+            margin-top: 20px;
+        }
+
+        .social-midea {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #FFF;
+
+            @include md-max {
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+            }
+
+            ul {
+                @include flexbox;
+                list-style: none;
+                @include justify-content(center);
+
+                li {
+                    margin-left: 3px;
+                    margin-right: 3px;
+
+                    a {
+                        width: 30px;
+                        height: 30px;
+                        @include flexbox;
+                        @include align-items(center);
+                        @include justify-content(center);
+                        background-color: $white-color;
+                        color: $black-color;
+                        @include border-radius(50px);
+                    }
+                }
+            }
+        }
+    }
+}

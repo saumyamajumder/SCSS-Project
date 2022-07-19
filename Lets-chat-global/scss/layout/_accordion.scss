@@ -1,0 +1,48 @@
+.accordion-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+
+    .set {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: #f5f5f5;
+        margin-bottom: 20px;
+
+        & .accordion-heading {
+            display: block;
+            padding: 10px 30px 10px 15px;
+            text-decoration: none;
+            color: $text-color;
+            font-size: 19px;
+            font-weight: 500;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+            background: #FFF;
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+
+            & i {
+                @include display-position(absolute);
+                right: 10px;top: 15px;
+                font-size: 14px;
+            }
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 10px;
+            display: none;
+
+            p {
+                padding: 10px 15px;
+                margin: 0;
+                color: $text-color;
+                font-size: 15px;
+            }
+        }
+    }
+
+}

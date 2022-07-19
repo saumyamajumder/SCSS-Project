@@ -1,0 +1,176 @@
+// services
+
+.home-services {
+    .container {
+        .content {
+            .h2 {
+                margin-bottom: 5px;
+            }
+        }
+
+        .home-services-module {
+            background-color: $gray-light;
+            padding: 60px 60px 44px;
+            margin-top: 40px;
+            cursor: pointer;
+            @include display-position(relative);
+
+            @include md-max {
+                padding: 40px 40px 24px;
+            }
+
+            @include sm-max {
+                padding: 30px 30px 14px;
+            }
+
+            &:hover {
+                background-color: $sky-color;
+
+                .home-services-module-heading {
+                    .home-services-module-heading-text {
+                        color: $white;
+                    }
+
+                    .icon {
+
+                        .svg-line1,
+                        .svg-line6,
+                        .svg-line7,
+                        .svg-line4,
+                        .svg-line3,
+                        .svg-line5,
+                        .svg2-line2,
+                        .svg2-line3,
+                        .svg2-line4,
+                        .svg2-line5,
+                        .svg2-line6,
+                        .svg2-line7,
+                        .svg2-line8,
+                        .svg2-line9,
+                        .svg2-line10,
+                        .svg2-line11,
+                        .svg2-line12 {
+                            fill: $white;
+                        }
+
+                        .svg-line2 {
+                            fill: $sky-color;
+                            stroke: $black;
+                        }
+
+
+
+
+                    }
+                }
+
+                p {
+                    color: $white;
+                }
+
+                a.right-arrow {
+                    @include flexbox;
+                }
+            }
+
+            .home-services-module-heading {
+                @include flexbox;
+                @include align-items(Center);
+
+                .icon {
+                    width: 70px;
+
+                    .svg-line1,
+                    .svg-line6,
+                    .svg-line7,
+                    .svg-line4,
+                    .svg-line3,
+                    .svg-line5 {
+                        fill: $black;
+                    }
+
+                    .svg-line2 {
+                        fill: $sky-color;
+                        stroke: $black;
+                    }
+
+
+
+                }
+
+                .home-services-module-heading-text {
+                    margin-left: 20px;
+                }
+
+            }
+
+            a.right-arrow {
+                @include display-position(absolute);
+                right: 0;
+                bottom: 0;
+                width: 40px;
+                height: 40px;
+                background-color: $green-color;
+                @include flexbox;
+                @include align-items(Center);
+                @include justify-content(Center);
+                color: $white;
+                @include display(none);
+            }
+
+        }
+
+    }
+}
+
+
+
+/* TAB */
+.tabs-nav {
+    @include flexbox;
+    width: 100%;
+}
+
+.tabs-nav li {
+    @include flexbox;
+    flex: 1;
+    margin-right: 0px;
+}
+
+.tabs-nav a {
+    @include flexbox;
+    padding: 10px 15px;
+    flex: 1;
+    color: #5D748A;
+    background-color: $white;
+    border-width: 1px 1px 0 1px ;
+    border-style: solid;
+    border-color: #dee2e6;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Active tab */
+
+.tabs-nav li.active a {
+    background: $sky-color;
+    color: $white;
+    border-color: $sky-color;
+}
+
+// .tabs-nav li.active a {
+//     color: inherit;
+// }
+
+/* Tab content */
+
+.tabs-content {
+    // border: 1px solid #34495E;
+    // padding: 10px;
+    // background: #FFF;
+    // margin-top: -1px;
+    // overflow: hidden;
+}
+
+.tabs-content div:not(:first-child) {
+    display: none;
+}

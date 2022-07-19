@@ -1,0 +1,146 @@
+// FOOTER
+footer {
+    background-color: $blue-color1;
+    @include common-padding(30px, 30px);
+
+    .footer-content {
+        &.padding-left {
+            padding-left: 60px;
+            @include md-max{
+                padding-left: 0px;
+            }
+        }
+
+        .footer-image {
+            margin-bottom: 10px;
+
+            @include md-max {
+                max-width: 300px;
+            }
+        }
+
+        .footer-card {
+            max-width: 300px;
+        }
+
+        .footer-text {
+            margin-bottom: 25px;
+
+            p {
+                font-size: 16px;
+                line-height: 24px;
+                color: #E1E0E7;
+            }
+
+            ul.social-media {
+
+                @include flexbox;
+                margin-bottom: 25px;
+                margin-top: 0px;
+
+                li {
+                    list-style: none;
+                    margin-right: 5px;
+
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+
+                    a {
+                        width: 25px;
+                        height: 25px;
+                        background-color: $white;
+                        color: $blue-color1;
+                        font-size: 13px;
+                        @include flexbox;
+                        @include justify-content(Center);
+                        @include align-items(Center);
+                        @include border-radius(50%);
+
+                        &:hover {
+                            background-color: $green-color;
+                            color: $white;
+                        }
+                    }
+                }
+
+            }
+
+            .footer-call {
+                margin-bottom: 5px;
+                font-size: 20px;
+                font-weight: 500;
+
+                a {
+                    font-size: 20px;
+                    @include md-max{
+                        font-size: 16px;
+                    }
+                }
+                @include md-max{
+                    font-size: 16px;
+                }
+
+            }
+
+            .footer-email {
+                font-size: 16px;
+
+                a {
+                    font-size: 16px;
+                }
+            }
+
+            ul.footer-menu {
+                list-style: none;
+
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            form {
+                input {
+                    @include border-radius(50px);
+                    height: 50px;
+                    border: none;
+                }
+
+                .page-btn2 {
+                    margin-top: 10px;
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 400;
+                    text-align: left;
+                    height: 50px;
+                }
+            }
+        }
+
+        .footer-heading {
+            margin-top: 20px;
+            margin-bottom: 35px;
+            @include sm-max{
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .bottom-footer {
+        margin-top: 25px;
+        padding-top: 40px;
+        border-top: 1px solid #74708c;
+
+        p {
+            @include font-weight(300);
+            font-size: 16px;
+            line-height: 19px;
+            color: #C0B2DE;
+        }
+    }
+}

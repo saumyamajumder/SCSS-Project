@@ -1,0 +1,94 @@
+// sign up
+.sign-up-page {
+    .row {
+        @include display-position(relative);
+
+        .banner-content {
+            .banner-title {
+                font-size: 45px;
+                line-height: 50px;
+
+                @include xxl-min {
+                    font-size: 55px;
+                    line-height: 60px;
+                }
+
+                @include md-max {
+                    font-size: 40px;
+                    line-height: 45px;
+                }
+
+                @include sm-max {
+                    font-size: 30px;
+                    line-height: 35px;
+                }
+            }
+        }
+
+        .banner-svg-icon {
+            @include display-position(absolute);
+            top: -38px;
+            left: -245px;
+
+            @include md-max {
+                @include display(none);
+            }
+        }
+
+        .banner-form {
+            background-color: $white;
+            padding: 50px 35px;
+            box-shadow: 0px 4px 20px 0 rgba(197, 123, 255, 0.2);
+            @include border-radius(40px);
+            max-width: 800px;
+            margin: 0 auto;
+            form {
+                .form-group {
+                    @include display-position(relative);
+
+                    .form-icon {
+                        @include display-position(absolute);
+                        top: 13px;
+                        right: 25px;
+
+                        i {
+                            color: #B7A2C7;
+                        }
+                    }
+
+                    &.otp {
+                        @include flexbox;
+                        @include justify-content(space-evenly);
+                        input {
+                            width: 50px;
+                            @include display(inline-block);
+                            border: none;
+                            @include border-radius(0);
+                            border-bottom: 1px solid #ced4da;
+                        }
+                    }
+                }
+
+                .page-btn {
+                    padding: 8px;
+                    max-width: 450px;
+                    width: 100%;
+                    margin: 0 auto;
+                    @include display(block);
+
+                    &::before {
+                        @include display(none);
+                    }
+
+                    &:hover {
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.already-top{
+    margin-top: 50px;
+}

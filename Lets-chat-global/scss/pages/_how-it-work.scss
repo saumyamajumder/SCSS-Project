@@ -1,0 +1,55 @@
+// About Us
+
+.internal-content-section {
+    .inner-content {
+
+        .how-it-work-page-section {
+
+            .how-itwork-page-module {
+                @include flexbox;
+                @include align-items(center);
+                @include justify-content(space-between);
+                @include display-position(relative);
+
+                @include rwd-max(575) {
+                    @include flex-flow(column !important);
+                    text-align: center;
+                }
+
+                &:nth-child(1) {}
+
+                &:nth-child(2) {
+                    margin-top: 140px;
+                    margin-bottom: 140px
+                }
+
+                .how-it-work-page-icon {
+                    @include flexbox;
+                    width: 30%;
+
+                    @include rwd-max(575) {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .how-it-work-page-content {
+                    @include flexbox;
+                    width: 65%;
+                    @include flex-flow(column);
+
+                    @include rwd-max(575) {
+                        width: 100%;
+                        
+                    }
+                }
+
+
+            }
+
+            .divider-bg {
+                width: 75%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

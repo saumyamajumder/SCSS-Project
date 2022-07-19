@@ -1,0 +1,93 @@
+.dashboard-body {
+    .dash-page-heading {
+        @include flexbox;
+        width: 100%;
+        @include justify-content(space-between);
+
+        @include md-max {
+            @include flex-flow(column);
+        }
+
+        form {
+            @include display-position(relative);
+            max-width: 300px;
+
+            input {
+                max-width: 300px;
+                @include display-position(relative);
+            }
+
+            button {
+                @include display-position(absolute);
+                top: 0;
+                height: 100%;
+                background: transparent;
+                border: none;
+                right: 10px;
+                font-weight: normal;
+                color: #723FA1;
+            }
+
+        }
+
+    }
+
+    .payment-box-full {
+        background-color: $white;
+        @include border-radius(20px);
+        padding: 20px;
+        border: 1px solid #dee2e6;
+        @include overflow(hidden);
+
+        .payment-table {
+            thead {
+                tr {
+                    background-color: #F3EEF9;
+                }
+
+                td {
+                    font-size: 16px;
+
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.dash-acc-dts {
+    text-align: center;
+
+    .dashboard-acc-img {
+        max-width: 130px;
+        margin: 0 auto;
+    }
+}
+
+.table {
+    tr {
+        th {
+
+            background-color: #F3EEF9;
+        }
+    }
+}
+
+.dash-board-acc-img-width{
+    width: 300px;
+    .dashboard-acc-img{
+        img{
+            border: 5px solid #C4C4C4;
+        }
+    }
+}
+.dash-board-acc-form-width{
+    max-width: 100% !important;
+    width: calc(100% - 300px) !important;
+    @include md-max{
+        width: 100% !important;
+    }
+}

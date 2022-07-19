@@ -1,0 +1,42 @@
+// Background Color
+.white-bg-color {
+    background-color: $white-color;
+}
+
+.light-gray-bg-color {
+    background-color: $light-gray;
+}
+
+.black-bg-color {
+    background-color: $black-color;
+}
+
+
+// DIVIDER
+
+.divider {
+    @include divider($black-color);
+}
+
+// PADDING
+
+
+.common-padding {
+    @include common-padding(80px, 80px);
+
+    @include xxl-min {
+        @include common-padding(120px, 120px);
+    }
+    @include lg-max {
+        @include common-padding(70px, 70px);
+    }
+    @include md-max {
+        @include common-padding(50px, 50px);
+    }
+}
+
+// Heading span
+
+.heading-span {
+    color: $blue-color;
+}

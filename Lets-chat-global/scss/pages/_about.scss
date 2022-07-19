@@ -1,0 +1,28 @@
+// About Us
+
+.internal-content-section {
+    .inner-content-module {
+        .full--row {
+            @include sm-max {
+                margin-top: 0px !important;
+                .inner-content{
+                    margin-top: 0px !important;
+                }
+            }
+        }
+
+        .inner-content {
+            @include sm-max {
+                margin-top: 20px;
+            }
+
+            .h4 {
+              
+            }
+
+            p {
+                color: $text-color2;
+            }
+        }
+    }
+}

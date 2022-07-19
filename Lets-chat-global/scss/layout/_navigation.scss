@@ -1,0 +1,260 @@
+// HEADER menu
+
+.header-right-menu {
+    .burger {
+        @include display-position(relative);
+        @include display(none);
+        @include transform(rotate(0deg));
+        @include transition(all, 0.5s, ease-in-out);
+        cursor: pointer;
+        width: 2rem;
+        height: 1rem;
+        border: none;
+        outline: none;
+        opacity: 0;
+        visibility: hidden;
+        background: none;
+        top: 0px;
+        right: 0px;
+        z-index: 999;
+
+        .burger-line {
+            @include display(block);
+            @include display-position(absolute);
+            @include transition(all, 0.5s, ease-in-out);
+            @include border-radius(0.25rem);
+            width: 100%;
+            height: 2px;
+            left: 0;
+            border: none;
+            outline: none;
+            opacity: 1;
+            background: $green-color;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                top: 0.5rem;
+            }
+
+            &:nth-child(4) {
+                top: 1rem;
+            }
+        }
+
+        &.is-active {
+            .burger-line {
+                background: $white;
+
+                &:nth-child(1),
+                &:nth-child(4) {
+                    top: 1.25rem;
+                    width: 0%;
+                    left: 50%;
+                }
+
+                &:nth-child(2) {
+                    @include transform(rotate(45deg));
+                }
+
+                &:nth-child(3) {
+                    @include transform(rotate(-45deg));
+                }
+            }
+        }
+
+        @include md-max {
+            @include display(block);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .header-right {
+        .menu {
+            @include md-max {
+                width: 100%;
+                @include display(block);
+                height: 0;
+                padding: 0;
+                opacity: 1;
+                visibility: hidden;
+                overflow: hidden;
+                @include transition(all, 0.5s, ease-in-out);
+                @include display-position(absolute);
+                z-index: 9;
+                left: 0;
+                background-color: $blue-color1;
+                top: 0px;
+
+                &.is-active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &-inner {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 0.75rem;
+                    padding: 1rem 0;
+                }
+            }
+
+            .navbar-nav {
+                @include flex-direction(row);
+
+                @include md-max {
+                    @include flex-direction(column);
+                    margin-top: 40px;
+                }
+
+                li {
+                    padding-left: 40px;
+
+                    @include lg-max {
+                        padding-left: 24px;
+                    }
+
+                    &:first-child {
+                        padding-left: 0px;
+
+                        @include md-max {
+                            padding-left: 24px;
+                        }
+                    }
+
+                    a {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 19px;
+                        color: $primary-color;
+
+                        @include md-max {
+                            color: $white;
+                        }
+
+                        &.active {
+                            color: $sky-color;
+                        }
+
+                        &:hover {
+                            color: $sky-color;
+                        }
+                    }
+
+                }
+            }
+
+            // @include md-max {
+            //     @include display(none);
+            // }
+        }
+
+        .header-loging-details {
+            margin-left: 70px;
+
+            @include lg-max {
+                margin-left: 60px;
+            }
+
+            @include md-max {
+                margin-left: 0px;
+                margin-right: 50px;
+            }
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin-left: 20px;
+
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+
+                    a {
+                        color: $black;
+                        font-weight: 500;
+                        font-size: 16px;
+
+                        .header-icon {
+                            @include display(none);
+
+                            @include sm-max {
+                                @include display(block);
+                            }
+                        }
+
+                        .header-txt {
+                            @include display(none);
+
+                            @include md-min {
+                                @include display(block);
+                            }
+                        }
+
+                        &.sign-up {
+                            color: $white;
+                        }
+
+                        &.login {
+
+                            &:hover {
+                                color: $sky-color;
+                            }
+
+                            @include sm-max {
+                                .header-icon {
+                                    i {
+                                        font-size: 25px;
+                                    }
+                                }
+                            }
+
+                        }
+
+                        &.page-btn2 {
+                            padding: 10px 36px 8px 36px;
+
+                            @include xxl-min {
+                                padding: 12px 40px 10px 40px;
+                            }
+
+                            // @include lg-max {
+                            //     padding: 10px 36px 8px 36px;
+                            // }
+
+                            &::before {
+                                @include display(none);
+                            }
+
+                            &:hover {
+                                padding: 10px 36px 8px 36px;
+
+
+                                &::before {
+                                    @include display(none);
+                                }
+
+                                @include xxl-min {
+                                    padding: 12px 40px 10px 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include md-max {
+        @include flexbox;
+        @include flex-flow(row-reverse);
+        @include align-items(center);
+    }
+}
